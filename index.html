@@ -48,49 +48,7 @@
         var database = firebase.database();
  
  
-        // -----------------------ADDING DATA-----------------------
-        var ref = database.ref('users');
         
-        
-        var data = {
-            name: document.getElementById("Your-Name"),
-            username: document.getElementById("UserName"),
-            password: document.getElementById("Password"),
-            phone_number: document.getElementById("Phone-Number"),
-            email_id: document.getElementById("Email-Id"),
-        };
-
-        
- 
-        // ref.push(data);
- 
- 
-        // ---------------------GETTING DATA-------------------
-        function receivedData(data){
-            var values = data.val();
-            var keys = Object.keys(values);
-            for (var i = 0; i < keys.length; i++){
-                let k = keys[i];
-                let username = values[k].name;
-                let password = values[k].password;
-                let phone_num = values[k].phone_number;
-                let email_id = values[k].email_id
-            }
- 
-        }
-
-
- 
-        function errData(data){
-            console.log(data)
-        }
-        
- 
-        ref.on('value', receivedData, errData) 
-
-        
- 
-        // ----------------------------------------------------
         
     </script>
  
@@ -111,6 +69,7 @@
 
 
             <script> 
+                var ref = database.ref('users');
                 let object = document.getElementById("sign-in-btn");
                 object.onclick = function() {
 
