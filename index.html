@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,156 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-</head>
 
+</head>
+ 
 <body>
+ 
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+ 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+ 
+ 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+ 
+ 
+ 
+    <script>
+ 
+        // -------------THIS INITIALISES YOUR DATABASE ---------------// 
+ 
+ 
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDR_RploDZeZuA-PiYexWRLAqgTiiW99J0",
+            authDomain: "nasa-spacesx.firebaseapp.com",
+            databaseURL: "https://nasa-spacesx-default-rtdb.firebaseio.com",
+            projectId: "nasa-spacesx",
+            storageBucket: "nasa-spacesx.appspot.com",
+            messagingSenderId: "590280165609",
+            appId: "1:590280165609:web:b8ba7da79c0aa22a8dc878",
+            measurementId: "G-R48HWEGQT2"
+        };
+ 
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+ 
+        var database = firebase.database();
+ 
+ 
+        // -----------------------ADDING DATA-----------------------
+        var ref = database.ref('users');
+        
+        
+        var data = {
+            name: document.getElementById("Your-Name"),
+            username: document.getElementById("UserName"),
+            password: document.getElementById("Password"),
+            phone_number: document.getElementById("Phone-Number"),
+            email_id: document.getElementById("Email-Id"),
+        };
+
+        
+ 
+        // ref.push(data);
+ 
+ 
+        // ---------------------GETTING DATA-------------------
+        function receivedData(data){
+            var values = data.val();
+            var keys = Object.keys(values);
+            for (var i = 0; i < keys.length; i++){
+                let k = keys[i];
+                let username = values[k].name;
+                let password = values[k].password;
+                let phone_num = values[k].phone_number;
+                let email_id = values[k].email_id
+            }
+ 
+        }
+
+
+ 
+        function errData(data){
+            console.log(data)
+        }
+        
+ 
+        ref.on('value', receivedData, errData) 
+
+        
+ 
+        // ----------------------------------------------------
+        
+    </script>
+ 
+ 
     <div class="cont">
         <div class="form sign-in">
             <h2>Welcome back!</h2>
             <label>
                 <span>UserName</span>
-                <input type="text" placeholder="Your UserName"/>
+                <input type="text" placeholder="Your UserName" id="enteredUsername" autocomplete="off"/>
             </label>
             <label>
                 <span>Password</span>
-                <input type="password" placeholder="Your Password" />
+                <input type="password" placeholder="Your Password" id="enteredPassword"  autocomplete="off"/>
             </label>
-            <p class="forgot-pass">Forgot password?</p>
-            <button type="button" class="submit">Sign In</button>
+           
+            <button type="submit" class="submit" id="sign-in-btn">Sign In</button>
+
+
+            <script> 
+                let object = document.getElementById("sign-in-btn");
+                object.onclick = function() {
+
+                    function receivedData(data){
+                        var values = data.val();
+                        var keys = object.keys(values);
+
+                        let enteredUsername = document.getElementById("enteredUsername").value;
+                        let enteredPassword = document.getElementById("enteredPassword").value;
+
+
+                        for (var i = 0; i < keys.length; i++){
+                            let k = keys[i];
+                            let username = values[k].name;
+                            let password = values[k].password;
+
+
+                            if (enteredUsername == username && enteredPassword == password){
+                              document.alert("You Have Successfully Signed In")
+                              window.location.href = "home_page.html";
+                            }
+
+                            else{
+                                document.alert("Please Check Your UserName and Password or SIGN-UP")
+                                // you dont want to go to the next window if it wrong password
+        
+                            }
+
+
+
+
+                        }   
+            
+                    }
+            
+                    function errData(data){
+                        console.log(data)
+                    }
+                    
+            
+                    ref.on('value', receivedData, errData) 
+                
+                }
+            
+            </script>
+
+
         </div>
         <div class="sub-cont">
             <div class="img">
@@ -44,93 +178,59 @@
                 <h2>Register With NASA-SpaceX to Explore Space</h2>
                 <label>
                     <span>Name</span>
-                    <input type="text"  placeholder="Your Name"/>
+                    <input type="text"  placeholder="Your Name" id="Your-Name" autocomplete="off" required/>
                 </label>
                 <label>
                     <span>UserName</span>
-                    <input type="text"  placeholder="UserName"/>
+                    <input type="text"  placeholder="UserName" id="UserName" autocomplete="off" required/>
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password"  placeholder="Unique Password"/>
+                    <input type="password"  placeholder="Unique Password" id="Password" autocomplete="off" required/>
                 </label>
                 <label>
                     <span>Email-Id</span>
-                    <input type="email" placeholder="example@example.com" />
+                    <input type="email" placeholder="example@example.com" id="Email-Id"  autocomplete="off" required/>
                 </label>
                 <label>
                     <span>Phone-Number</span>
-                    <input type="number" placeholder="+(Country Code) Your Number" />
+                    <input type="number" placeholder="+(Country Code) Your Number" id="Phone-Number" autocomplete="off" required/>
                 </label>
-                <label>
-                    <span>Country</span>
-                    <input type="text" placeholder="Country Name" />
-                </label>
-                <label>
-                    <span>Date Of Birth</span>
-                    <input type="date" />
-                </label>
-                <button type="button" class="submit">Sign Up</button>
+ 
+                <button type="submit" class="submit" id="sign-btn">Sign Up</button>
+
+                <script> 
+                    
+                    object.onclick() = function () {
+                        var ref = database.ref('users');
+        
+                        var data = {
+                            name: document.getElementById("Your-Name"),
+                            username: document.getElementById("UserName"),
+                            password: document.getElementById("Password"),
+                            phone_number: document.getElementById("Phone-Number"),
+                            email_id: document.getElementById("Email-Id"),
+                        };
+
+                        
+                        ref.push(data);
+                        
+                    
+
+                    }
+
+                
+                </script>
             </div>
         </div>
     </div>
-
+ 
     <script>
         document.querySelector('.img__btn').addEventListener('click', function() {
             document.querySelector('.cont').classList.toggle('s--signup');
         });
     </script>
+
+     
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
