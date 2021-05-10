@@ -1,6 +1,5 @@
 *{
     scroll-behavior: smooth;
-    background-color: black;
 }
 
 body{
@@ -57,14 +56,13 @@ nav ul a:hover{
 }
 
 
+
+
 #NASA-Form{
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: crimson;
-    margin-left: 30%;
-    margin-top: 40rem;
-    color: cornsilk;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-left: 4rem;
     
 }
 
@@ -74,7 +72,7 @@ nav ul a:hover{
     width: 70%;
     text-align: center;
     font-family: 'Lexend Deca', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 #sub-text{
@@ -89,4 +87,69 @@ nav ul a:hover{
     border-radius: 50%;
 }
 
-    
+#submit{
+    margin-left: 15%;
+    margin-top: 15%;
+}
+
+#options{
+    text-align: center;
+    text-decoration: darkgreen;
+}
+
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  /* Floating column for labels: 25% width */
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
