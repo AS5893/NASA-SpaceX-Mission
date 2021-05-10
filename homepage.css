@@ -1,5 +1,6 @@
 *{
     scroll-behavior: smooth;
+    background-color: black;
 }
 
 body{
@@ -49,21 +50,11 @@ nav ul a:hover{
 }
 
 
-.btn{
-    padding: 15px;
-    background-color: cyan;
-    border-radius: 10px;
-    color: black;
-    transition-duration: 400ms;
-}
-
 .btn:hover{
     background-color: black;
     color: white;
     cursor: pointer;
 }
-
-
 
 
 #NASA-Form{
@@ -75,8 +66,6 @@ nav ul a:hover{
     margin-top: 40rem;
     
 }
-
-
 
 #About-Nasa-SpaceX{
     color: blue;

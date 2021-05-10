@@ -41,7 +41,7 @@ object.onclick = function() {
  
             if (enteredUsername == username && enteredPassword == password){
               alert("You Have Successfully Signed In")
-              window.location.href = "mothersday.html";
+              window.location.href = "homepage.html";
               console.log('signed in')
             
             }
