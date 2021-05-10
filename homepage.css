@@ -1,0 +1,102 @@
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.473);
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+nav ul{
+    margin-right: 10rem;
+    margin-top: 1.8rem;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline;
+    text-align: center;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: white;
+    margin-left: 1.5rem;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    transition-duration: 300ms;
+}
+
+nav ul a:hover{
+    color: black;
+}
+
+
+.left{
+    margin-top: 0.5rem;
+    margin-left: 5rem;
+    
+}
+
+
+.btn{
+    padding: 15px;
+    background-color: cyan;
+    border-radius: 10px;
+    color: black;
+    transition-duration: 400ms;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+#NASA-Form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: crimson;
+    margin-left: 30%;
+    margin-top: 40rem;
+    
+}
+
+
+
+#About-Nasa-SpaceX{
+    color: blue;
+    margin-left: 15%;
+    width: 70%;
+    text-align: center;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 100;
+}
+
+#sub-text{
+    color: brown;
+}
+
+.title{
+    color: coral;
+}
+
+#logo{
+    border-radius: 50%;
+}
+
+    
