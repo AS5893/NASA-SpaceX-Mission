@@ -68,6 +68,8 @@ object.onclick = function() {
     ref.on('value', receivedData, errData) 
  
 }
+
+
 var object = document.getElementById("sign-btn");   
 object.onclick = function () {
     

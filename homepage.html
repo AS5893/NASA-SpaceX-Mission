@@ -7,6 +7,15 @@
   <title>Document</title>
   <link rel="stylesheet" href="homepage.css">
   <script src="homepage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+  
+
+ 
+
 </head>
 <body>
 
@@ -24,10 +33,10 @@
           <a href="#homepage" id="Home">
             <li>Home</li>
           </a>
-             <a href="#NASA-Form" id="Mission-To-Mars">
+             <a href="#MMS" id="Mission-To-Mars" >
                  <li>Mission To Mars</li>
              </a>
-             <a href="#About-Nasa-SpaceX">
+             <a href="#About">
                  <li>About Nasa-SpaceX</li>
              </a>
              
@@ -37,17 +46,25 @@
 
  <div id="homepage">
   <div class="row">
-    <div class="column">
-      <img src="NASA image.gif" alt="nasa-spacex" style="width:95%; height: 80%; margin-top: 20%; float: left; ">
+    <div class="column" id="nasa-spacex">
+      <img src="nasa-spacex logo.gif" id="nasa-spacex" style="width:95%; height: 31rem; margin-top: 8%;margin-left: 2rem; margin-right: 2rem;float: center; ">
     </div>
-    <div class="column">
-      <img src="SpaceX.gif" alt="SpaceX" id="SpaceX" style="width:95%; height: 80%; margin-top: 20%; float: right; ">
-    </div>
+   
   </div>
   
   <div class="flex" id="logos"></div>
 </div>
  
+<div id="MMS">
+<h1 id="titletext"> WHAT IS MISSION TO MARS?</h1>
+<p>The mission to Mars is organized by NASA in collaboration with SpaceX. Here we wish to colonize the planet Mars with the general population of Earth. Anyone can register. 50 people will be approved and will be specially trained by NASA to live on Mars for a certain period of time. </p>
+
+<h1 id="titletext"> WHY MARS?</h1>
+<p> Researcher of NASA has done high research and quality tests of air, water and land on Mars. No other planet (yet discovered) except Earth has 80% gravity with availability of air and water.</p>
+
+
+<div class="flex" id="mms"></div>
+</div>
  
 <!-- //NASA REGISTRATION FORM START// -->
  <div id="addArea" class="addArea">
@@ -59,21 +76,21 @@
          <!--FirstName-->
          <p class="full">
           <label>First Name</label>
-          <input type="text" name="fname" id="firstname" placeholder="Your Name" required>
+          <input type="text" name="firstname" id="firstname" class="input" placeholder="Your Name" required>
         </p>
          
 
         <!--LastName-->
         <p class="full">
               <label>Last Name</label>
-              <input type="text" name="lname" id="lastname" placeholder="Your Last Name">
+              <input type="text" name="lastname" id="lastname" class="input" placeholder="Your Last Name">
             </p>
        
        <!-- Country -->
        <p class="full">
         <label>Your Country</label>
       
-    <select id = "Country" name="country" onchange = "favTutorial()" >  
+    <select id = "country" name="country" class="input" onchange = "favTutorial()" >  
       <option> ---Your Country--- </option>  
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
@@ -326,14 +343,14 @@
         <!--Email-->
         <p class="full">
           <label>Email Address</label>
-          <input type="text" name="email" id="email" placeholder="Your Email-Address" required>
+          <input type="text" name="email" id="email" class="input" placeholder="Your Email-Address" required>
         </p>
 
         <!--Number-->
         
         <p class="full">
           <label>Phone Number</label>
-          <input type="text" name="phone" id="phone" placeholder="Your Phone Number" required>
+          <input type="text" name="phone" id="phone" class="input" placeholder="Your Phone Number" required>
         </p>
 
         <!-- Subject -->
@@ -341,12 +358,12 @@
           
         <p class="full">
           <label>Message</label>
-          <textarea name="message" rows="5" id="message" placeholder="Why would you like to visit Mars?" required></textarea>
+          <textarea name="message" rows="5" id="message" class="input" placeholder="Why would you like to visit Mars?" required></textarea>
         </p>
         
         
         <p class="submit">
-          <button type="submit">Submit</button>
+          <input type="submit" id="submit"></input>
         </p>
       </form>
 
@@ -357,10 +374,10 @@
 <!-- //NASA REGISTRATION FORM OVER// -->
 
 
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<div id="About-Nasa-SpaceX">
-  <h1 class="title">
+<div id="About">
+  <h1 class="title" id="title">
      About Nasa-SpaceX
   </h1>
   <br> <br>
@@ -380,17 +397,15 @@
 
   SpaceX's achievements include the first privately funded liquid-propellant rocket to reach orbit (Falcon 1 in 2008), the first private company to successfully launch, orbit, and recover a spacecraft (Dragon in 2010), the first private company to send a spacecraft to the International Space Station (Dragon in 2012), the first vertical take-off and vertical propulsive landing for an orbital rocket (Falcon 9 in 2015), the first reuse of an orbital rocket (Falcon 9 in 2017), and the first private company to send astronauts to orbit and to the International Space Station (SpaceX Crew Dragon Demo-2 in 2020). SpaceX has flown and reflown the Falcon 9 series of rockets over one hundred times.
 
+  <!-- <div id="admin">
+    <input type="button" class="Admin-button">Admin? Login here to check the responses
+    </input>
 
-  <div id="Contact-Us">
-
-    
-    
-
-
-  
+    <div class="flex" id="Admin-button"></div>
+    </div> -->
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyMZ9ZseCpyOlZMFq6C0lyeMfnfjuNk0ssxhoIo2ABUxvKtfRVj7cNdxI-UHQ5U3BwfKA/exec'
@@ -407,9 +422,68 @@
             window.location.reload()
             
         })
+</script> -->
+
+
+
+
+<script type="text/javascript">
+  
+
+
+var firebaseConfig = {
+  apiKey: "AIzaSyA9Mv2BH5jcqXbN7RJb-_REZSr4RRgTBaE",
+    authDomain: "display-data-nasa.firebaseapp.com",
+    databaseURL: "https://display-data-nasa-default-rtdb.firebaseio.com",
+    projectId: "display-data-nasa",
+    storageBucket: "display-data-nasa.appspot.com",
+    messagingSenderId: "697196023674",
+    appId: "1:697196023674:web:d3ca8abfd324627cda90c3",
+    measurementId: "G-DZCVMTMRD3"
+};
+
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+ 
+ var database = firebase.database();
+ var ref = database.ref('users');
+
+var submit = document.getElementById("submit");   
+submit.onclick = function () {
+    
+ 
+    var data = {
+        firstname: document.getElementById("firstname").value,
+        lastname: document.getElementById("lastname").value,
+        country: document.getElementById("country").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value,
+    };
+ 
+     
+    
+
+    alert("You have successfully signed up for MISSION TO MARS")
+    window.location.reload();
+
+    ref.push(data);
+    
+    
+ 
+};
+
 </script>
+
+
+
 
   
 </body>
+
+
+
+
 </html>
 

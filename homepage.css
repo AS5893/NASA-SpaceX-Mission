@@ -59,16 +59,15 @@ nav ul a:hover{
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    margin-left: 4rem;
-    margin-top: 30%;
-    margin-right: 4rem;
+    margin-top: 20%;
     font-family: 'Lexend Deca', sans-serif;
     display: none;
     width: 100rem;
     height: 50rem;
+    text-align: left;
 }
 
-#About-Nasa-SpaceX{
+#About{
     color: blue;
     margin-left: 15%;
     width: 70%;
@@ -137,6 +136,38 @@ input[type=text], select, textarea{
     border-radius: 20%;
   }
 
+  .Admin-button{
+    background-color : #31B0D5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-color: #46b8da;
+    
+    
+  }
+  
+  #admin {
+    position: fixed;
+    bottom: -4px;
+    right: 10px;
+    
+  }
 
+  #MMS{
 
+    color: azure;
+    text-align: center;
+    text-decoration: currentColor;
+    display: none;
+    margin-top: 10%;
+    flex-direction: column;
+    font-family: 'Lexend Deca', sans-serif;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    
+  }
+
+  #titletext{
+      color: rgba(0, 163, 228, 0.774);
+  }
 
