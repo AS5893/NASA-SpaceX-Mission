@@ -17,7 +17,6 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
  
  
- 
 var database = firebase.database();
 var ref = database.ref('users');
  
@@ -42,14 +41,15 @@ object.onclick = function() {
             if (enteredUsername == username && enteredPassword == password){
               alert("You Have Successfully Signed In")
               window.location.href = "homepage.html";
-              console.log('signed in')
+              break
             
             }
  
  
             else{
                 alert("Please Check Your UserName and Password or SIGN-UP")
-                // you dont want to go to the next window if it wrong password
+                break
+                 //you dont want to go to the next window if it wrong password
  
             }
  
@@ -69,9 +69,8 @@ object.onclick = function() {
  
 }
 var object = document.getElementById("sign-btn");   
-console.log(object.textContent);
 object.onclick = function () {
-    console.log(database)
+    
  
     var data = {
         name: document.getElementById("Your-Name").value,
@@ -81,9 +80,12 @@ object.onclick = function () {
         email_id: document.getElementById("Email-Id").value,
     };
  
-    console.log(data);  
+     
     ref.push(data);
+
+    alert("You have successfully signed up")
+    window.location.reload()
     
-    console.log('presed');
+    
  
 };

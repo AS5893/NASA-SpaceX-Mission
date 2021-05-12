@@ -1,14 +1,21 @@
 *{
     scroll-behavior: smooth;
+    
 }
+
+html{
+   background-color: rgb(50,50,50); 
+}
+
 
 body{
     margin: 0;
     padding: 0;
+    
 }
 
 nav{
-    background-color: rgba(0, 0, 0, 0.473);
+    background-color: rgb(0, 0, 0);
     height: 5rem;
     display: flex;
     justify-content: space-between;
@@ -30,7 +37,7 @@ nav ul li{
 
 nav ul a{
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
     margin-left: 1.5rem;
     font-family: 'Lexend Deca', sans-serif;
     font-weight: 400;
@@ -38,7 +45,7 @@ nav ul a{
 }
 
 nav ul a:hover{
-    color: black;
+    color: rgba(255, 255, 0, 0.884);
 }
 
 
@@ -48,22 +55,17 @@ nav ul a:hover{
     
 }
 
-
-.btn:hover{
-    background-color: black;
-    color: white;
-    cursor: pointer;
-}
-
-
-
-
 #NASA-Form{
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
     margin-left: 4rem;
-    
+    margin-top: 30%;
+    margin-right: 4rem;
+    font-family: 'Lexend Deca', sans-serif;
+    display: none;
+    width: 100rem;
+    height: 50rem;
 }
 
 #About-Nasa-SpaceX{
@@ -105,51 +107,36 @@ input[type=text], select, textarea{
     box-sizing: border-box;
     resize: vertical;
   }
-  
-  /* Style the label to display next to the inputs */
-  label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-  }
-  
-  /* Style the submit button */
-  input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-  }
-  
-  /* Floating column for labels: 25% width */
-  .col-25 {
+
+.reg-form{
+    text-align: center;
+    color: rgb(147, 150, 6) ;
+    font-family: 'Lexend Deca', sans-serif;
+
+}
+
+.column {
     float: left;
-    width: 25%;
-    margin-top: 6px;
+    width: 33.33%;
+    padding: 5px;
   }
   
-  /* Floating column for inputs: 75% width */
-  .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
+  .row::after {
     content: "";
-    display: table;
     clear: both;
+    display: table;
+  }
+
+  .row {
+    display: flex;
   }
   
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
-    }
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+    border-radius: 20%;
   }
+
+
 
 

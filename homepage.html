@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="homepage.css">
+  <script src="homepage.js"></script>
 </head>
 <body>
 
   <nav>
-    <a href="#">
+    <a href="#homepage" >
      <div class="left">
          <img src="nasa-spacex logo.jpeg" alt="Logo of movie-logger" width="70" id="logo">
      </div> 
@@ -20,10 +21,10 @@
 
      <div class="right">
          <ul>
-          <a href="#">
+          <a href="#homepage" id="Home">
             <li>Home</li>
           </a>
-             <a href="#Nasa-Form">
+             <a href="#NASA-Form" id="Mission-To-Mars">
                  <li>Mission To Mars</li>
              </a>
              <a href="#About-Nasa-SpaceX">
@@ -33,44 +34,46 @@
          </ul>
      </div>
  </nav>
+
+ <div id="homepage">
+  <div class="row">
+    <div class="column">
+      <img src="NASA image.gif" alt="nasa-spacex" style="width:95%; height: 80%; margin-top: 20%; float: left; ">
+    </div>
+    <div class="column">
+      <img src="SpaceX.gif" alt="SpaceX" id="SpaceX" style="width:95%; height: 80%; margin-top: 20%; float: right; ">
+    </div>
+  </div>
+  
+  <div class="flex" id="logos"></div>
+</div>
  
  
 <!-- //NASA REGISTRATION FORM START// -->
  <div id="addArea" class="addArea">
   <form method="post" autocomplete="off" name="google-sheet" action="#" id="NASA-Form">
     
-    
       
-         <h1>Registration Form</h1><br>
+         <h1 class="reg-form" >Registration Form</h1><br>
          
          <!--FirstName-->
-         <div class="row">
-          <div class="col-25">
-            <label for="fname">First Name</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="fname" name="firstname" placeholder="Your first name..">
-          </div>
-        </div>
+         <p class="full">
+          <label>First Name</label>
+          <input type="text" name="fname" id="firstname" placeholder="Your Name" required>
+        </p>
+         
 
         <!--LastName-->
-        <div class="row">
-          <div class="col-25">
-            <label for="lname">Last Name</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-          </div>
-        </div>
+        <p class="full">
+              <label>Last Name</label>
+              <input type="text" name="lname" id="lastname" placeholder="Your Last Name">
+            </p>
        
        <!-- Country -->
-        <div class="row">
-          <div class="col-25">
-            <label for="country">Country</label>
-          </div>
-          <div class="col-75">
-           
-<select id = "Country" name="country" onchange = "favTutorial()" >  
+       <p class="full">
+        <label>Your Country</label>
+      
+    <select id = "Country" name="country" onchange = "favTutorial()" >  
       <option> ---Your Country--- </option>  
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
@@ -316,60 +319,45 @@
       <option value="Yemen">Yemen</option>
       <option value="Zambia">Zambia</option>
       <option value="Zimbabwe">Zimbabwe</option> 
-</select>  
-            
-          </div>
-        </div>
+    </select>  
+  </p>     
+          
 
         <!--Email-->
-        <div class="row">
-          <div class="col-25">
-            <label for="Email-Id">Email-Id</label>
-          </div>
-          <div class="col-75">
-            <input type="email" id="Email-Id" name="Email-Id" placeholder="Your Email-Id..">
-          </div>
-        </div>
+        <p class="full">
+          <label>Email Address</label>
+          <input type="text" name="email" id="email" placeholder="Your Email-Address" required>
+        </p>
 
         <!--Number-->
-        <div class="row">
-          <div class="col-25">
-            <label for="Number">Phone-Number</label>
-          </div>
-          <div class="col-75">
-            <input type="number" id="Phone-Number" name="Phone-Number" placeholder="Your Phone-Number..">
-          </div>
-        </div>
+        
+        <p class="full">
+          <label>Phone Number</label>
+          <input type="text" name="phone" id="phone" placeholder="Your Phone Number" required>
+        </p>
 
         <!-- Subject -->
-        <div class="row">
-          <div class="col-25">
-            <label for="subject">Subject</label>
-          </div>
-          <div class="col-75">
-            <textarea id="subject" name="subject" placeholder="Why would you like to visit Mars?" style="height:200px"></textarea>
-          </div>
-        </div>
+       
+          
+        <p class="full">
+          <label>Message</label>
+          <textarea name="message" rows="5" id="message" placeholder="Why would you like to visit Mars?" required></textarea>
+        </p>
+        
+        
+        <p class="submit">
+          <button type="submit">Submit</button>
+        </p>
+      </form>
 
-
-
-
-        <div class="row">
-          <input type="submit" value="Submit">
-        </div>
-         
-   
-    
-    
-      
-  </form>
+      <div class="flex" id="nasaForm"></div>
   
 </div>
 
 <!-- //NASA REGISTRATION FORM OVER// -->
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
 <div id="About-Nasa-SpaceX">
   <h1 class="title">
@@ -407,12 +395,17 @@
 
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyMZ9ZseCpyOlZMFq6C0lyeMfnfjuNk0ssxhoIo2ABUxvKtfRVj7cNdxI-UHQ5U3BwfKA/exec'
         const form = document.forms['google-sheet']
+
+
       
         form.addEventListener('submit', e => {
           e.preventDefault()
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => alert("You have successfully submitted."))
             .catch(error => console.error('Error!', error.message))
+
+            window.location.reload()
+            
         })
 </script>
 
