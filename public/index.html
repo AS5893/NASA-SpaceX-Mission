@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+ 
+</head>
+ 
+<body>
+ 
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+ 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+ 
+ 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+ 
+ 
+ 
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Welcome back!</h2>
+            <label>
+                <span>UserName</span>
+                <input type="text" placeholder="Your UserName" id="enteredUsername" autocomplete="off"/>
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" placeholder="Your Password" id="enteredPassword"  autocomplete="off"/>
+            </label>
+           
+            <button type="submit" class="submit" id="sign-in-btn">Sign In</button>
+ 
+        </div>
+
+        
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                    <h2>New here?</h2>
+                    <p>Sign up and Discover our Space!</p>
+                </div>
+                <div class="img__text m--in">
+                    <h2>One of us?</h2>
+                    <p>If you already has an account, just sign in. </p>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Welcome To NASA Registration!</h2>
+                <label>
+                    <span>Name</span>
+                    <input type="text"  placeholder="Your Name" id="Your-Name" autocomplete="off" required/>
+                </label>
+                <label>
+                    <span>UserName</span>
+                    <input type="text"  placeholder="UserName" id="UserName" autocomplete="off" required/>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password"  placeholder="Unique Password" id="Password" autocomplete="off" required/>
+                </label>
+                <label>
+                    <span>Email-Id</span>
+                    <input type="email" placeholder="example@example.com" id="Email-Id"  autocomplete="off" required/>
+                </label>
+                <label>
+                    <span>Phone-Number
+                    </span>
+                    <input type="text" placeholder="Phone-Number" id="Phone-Number" autocomplete="off" required/>
+                </label>
+ 
+                <button type="submit" class="submit" id="sign-btn">Sign Up Now</button>
+ 
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function() {
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+    </script>
+ 
+ 
+    <script src="app.js"></script>
+ 
+     
+</body>
+</html>
+ 
+
+
+
+
+

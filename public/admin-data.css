@@ -1,0 +1,104 @@
+
+
+body {
+    font-family: 'Itim', cursive;
+    background: #ffffff;
+}
+
+
+input,
+button {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Itim', cursive;
+}
+
+.tip {
+    font-size: 20px;
+    margin: 40px auto 50px;
+    text-align: center;
+}
+
+#cont {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    height: 550px;
+    margin-left: 8rem;
+    margin-top: 5rem;
+    margin-right: 15rem;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form {
+    position: relative;
+    width: 640px;
+    height: 100%;
+    padding: 50px 30px 0;
+    margin-left: 7rem;
+}
+
+
+button {
+    display: block;
+    margin: 0 auto;
+    width: 260px;
+    height: 36px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+
+h2 {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    width: 260px;
+    margin: 25px auto 0;
+    text-align: center;
+}
+
+label span {
+    font-size: 12px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+
+
+.submit {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: #ff008c;
+    text-transform: uppercase;
+}
+
+
+
+
+

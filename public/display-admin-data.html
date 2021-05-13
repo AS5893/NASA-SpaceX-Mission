@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+    </ul>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.4.2/firebase-database.min.js" integrity="sha512-Z4bnhc3HEYmYDjcIV5j4j7gc7dg7tPjxk0n2JW8ZEwc0QZgnl1oAywOCAtgEJm7pKrbFywF2dUWy+AwgUkDjMw==" crossorigin="anonymous"></script>
+
+
+
+    <script id="subscript">
+        var firebaseConfig = {
+     apiKey: "AIzaSyDR_RploDZeZuA-PiYexWRLAqgTiiW99J0",
+     authDomain: "nasa-spacesx.firebaseapp.com",
+     databaseURL: "https://nasa-spacesx-default-rtdb.firebaseio.com",
+     projectId: "nasa-spacesx",
+     storageBucket: "nasa-spacesx.appspot.com",
+    messagingSenderId: "590280165609",
+    appId: "1:590280165609:web:b8ba7da79c0aa22a8dc878",
+     measurementId: "G-R48HWEGQT2"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var formNo=0;
+
+    function addItemsToList(firstname,lastname,country,email,phone,message){
+        var ul=document.getElementById('list');
+        var header= document.createElement('h2');
+
+        var _firstname= document.createElement('li')
+        var _lastname= document.createElement('li')
+        var _country= document.createElement('li')
+        var _email= document.createElement('li')
+        var _phone= document.createElement('li')
+        var _message= document.createElement('li')
+
+        header.innerHTML= 'form-'+ (++formNo);
+
+        _firstname.innerHTML='firstname:'+firstname;
+        _lastname.innerHTML='lastname:'+lastname;
+        _country.innerHTML='country:'+country;
+        _email.innerHTML='email:'+email;
+        _phone.innerHTML='phone:'+phone;
+        _message.innerHTML='message:'+message;
+
+        ul.appendChild(header);
+        ul.appendChild(_firstname);
+        ul.appendChild(_lastname);
+        ul.appendChild(_country);
+        ul.appendChild(_email);
+        ul.appendChild(_phone);
+        ul.appendChild(_message);
+    }
+
+    function FetchAllData(){
+        firebase.database().ref('forms').once('value', function(snapshot) {
+            snapshot.forEach{
+                function(ChildSnapshot) {
+                    let firstname = ChildSnapshot.val().firstname;
+                    let lastname = ChildSnapshot.val().lastname;
+                    let email = ChildSnapshot.val().email;
+                    let country = ChildSnapshot.val().country;
+                    let phone = ChildSnapshot.val().phone;
+                    let message = ChildSnapshot.val().message;
+                    addItemsToList(firstname,lastname,email,country,phone,message);
+
+                }
+            };
+            
+        });
+    }
+
+   window.onload(FetchAllData)
+
+    </script>
+</body>
+</html>
