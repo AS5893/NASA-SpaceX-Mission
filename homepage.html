@@ -7,14 +7,13 @@
   <title>Document</title>
   <link rel="stylesheet" href="homepage.css">
   <script src="homepage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-
   
+  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
 
- 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.4.2/firebase-database.min.js" integrity="sha512-Z4bnhc3HEYmYDjcIV5j4j7gc7dg7tPjxk0n2JW8ZEwc0QZgnl1oAywOCAtgEJm7pKrbFywF2dUWy+AwgUkDjMw==" crossorigin="anonymous"></script>
+
+
 
 </head>
 <body>
@@ -90,7 +89,7 @@
        <p class="full">
         <label>Your Country</label>
       
-    <select id = "country" name="country" class="input" onchange = "favTutorial()" >  
+    <select id = "country" name="country" class="input" >  
       <option> ---Your Country--- </option>  
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
@@ -360,11 +359,10 @@
           <label>Message</label>
           <textarea name="message" rows="5" id="message" class="input" placeholder="Why would you like to visit Mars?" required></textarea>
         </p>
-        
-        
         <p class="submit">
-          <input type="submit" id="submit"></input>
+          <input type="submit" name="submit" id="submit">
         </p>
+    
       </form>
 
       <div class="flex" id="nasaForm"></div>
@@ -397,32 +395,15 @@
 
   SpaceX's achievements include the first privately funded liquid-propellant rocket to reach orbit (Falcon 1 in 2008), the first private company to successfully launch, orbit, and recover a spacecraft (Dragon in 2010), the first private company to send a spacecraft to the International Space Station (Dragon in 2012), the first vertical take-off and vertical propulsive landing for an orbital rocket (Falcon 9 in 2015), the first reuse of an orbital rocket (Falcon 9 in 2017), and the first private company to send astronauts to orbit and to the International Space Station (SpaceX Crew Dragon Demo-2 in 2020). SpaceX has flown and reflown the Falcon 9 series of rockets over one hundred times.
 
-  <!-- <div id="admin">
-    <input type="button" class="Admin-button">Admin? Login here to check the responses
-    </input>
-
-    <div class="flex" id="Admin-button"></div>
-    </div> -->
+ <div id="myButton">
+  <a href="admin-data.html" id="admin-link" > Admin? Click Here to check responses.</a>
+</div>
 
 
-<!-- <script type="text/javascript">
 
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyMZ9ZseCpyOlZMFq6C0lyeMfnfjuNk0ssxhoIo2ABUxvKtfRVj7cNdxI-UHQ5U3BwfKA/exec'
-        const form = document.forms['google-sheet']
 
-
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => alert("You have successfully submitted."))
-            .catch(error => console.error('Error!', error.message))
-
-            window.location.reload()
-            
-        })
-</script> -->
+<!-- SCRIPT FOR ADMIN-DATA STARTS -->
 
 
 
@@ -431,26 +412,25 @@
   
 
 
-var firebaseConfig = {
-  apiKey: "AIzaSyA9Mv2BH5jcqXbN7RJb-_REZSr4RRgTBaE",
+  var firebaseConfig = {
+    apiKey: "AIzaSyA9Mv2BH5jcqXbN7RJb-_REZSr4RRgTBaE",
     authDomain: "display-data-nasa.firebaseapp.com",
     databaseURL: "https://display-data-nasa-default-rtdb.firebaseio.com",
     projectId: "display-data-nasa",
     storageBucket: "display-data-nasa.appspot.com",
     messagingSenderId: "697196023674",
-    appId: "1:697196023674:web:d3ca8abfd324627cda90c3",
-    measurementId: "G-DZCVMTMRD3"
-};
+    appId: "1:697196023674:web:3130e63f8fec3728da90c3",
+    measurementId: "G-M4KQVLZND7"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
  
  var database = firebase.database();
- var ref = database.ref('users');
+ var ref = database.ref('forms');
 
 var submit = document.getElementById("submit");   
-submit.onclick = function () {
+submit.onclick = function (e) {
     
  
     var data = {
@@ -462,16 +442,16 @@ submit.onclick = function () {
         message: document.getElementById("message").value,
     };
  
-     
-    
-
-    alert("You have successfully signed up for MISSION TO MARS")
-    window.location.reload();
+    console.log(data);
+    console.log(database);
 
     ref.push(data);
+
+    alert("You have successfully signed up for MISSION TO MARS");
+    e.preventDefault()
+
+    window.location.href = "homepage.html";
     
-    
- 
 };
 
 </script>
@@ -481,9 +461,5 @@ submit.onclick = function () {
 
   
 </body>
-
-
-
-
 </html>
 

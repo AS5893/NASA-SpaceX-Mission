@@ -68,7 +68,7 @@ nav ul a:hover{
 }
 
 #About{
-    color: blue;
+    color: rgba(255, 255, 255, 0.938);
     margin-left: 15%;
     width: 70%;
     text-align: center;
@@ -77,11 +77,11 @@ nav ul a:hover{
 }
 
 #sub-text{
-    color: brown;
+    color: rgb(253, 255, 115);
 }
 
 .title{
-    color: coral;
+    color: rgb(46, 189, 255);
 }
 
 #logo{
@@ -171,3 +171,47 @@ input[type=text], select, textarea{
       color: rgba(0, 163, 228, 0.774);
   }
 
+  #style{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-left: 0rem;
+      margin-top: 10%;
+
+  }
+
+  #submit{
+      position: relative;
+      top: -11rem;
+      left: 25rem;
+      color:rgba(255, 251, 0, 0.884);
+      background-color: rgba(0, 0, 0, 0.904);
+      width: 5rem;
+      height: 2.5rem;
+      border-radius: 10%;
+      cursor: pointer;
+      
+  }
+
+  #submit:hover{
+      background-color: rgb(34, 30, 30);
+      transition-duration: 300ms;
+
+
+  }
+
+
+  #myButton {
+    position: fixed;
+    bottom: -3px;
+    right: 10px;
+  }
+
+  #admin-link{
+    background-color : #31afd5a9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
