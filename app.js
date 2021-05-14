@@ -46,13 +46,14 @@ object.onclick = function() {
             
             }
 
+ 
         }   
  
 
-        if(signedin == false){
+            if(signedin == false){
             alert("Please Check Your UserName and Password or SIGN-UP")
             
-        }
+            }
     }
  
     function errData(data){
@@ -78,6 +79,10 @@ object.onclick = function () {
  
    
     ref.push(data);
+
+    alert("You have successfully signed up");
+    window.location.reload()
+    
     
     
  

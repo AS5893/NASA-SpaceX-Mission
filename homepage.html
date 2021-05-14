@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Mission-To-Mars</title>
   <link rel="stylesheet" href="homepage.css">
   <script src="homepage.js"></script>
   
@@ -75,21 +75,21 @@
          <!--FirstName-->
          <p class="full">
           <label>First Name</label>
-          <input type="text" name="firstname" id="firstname" class="input" placeholder="Your Name" required>
+          <input type="text" name="FirstName" id="firstname" class="input" placeholder="Your Name" required>
         </p>
          
 
         <!--LastName-->
         <p class="full">
               <label>Last Name</label>
-              <input type="text" name="lastname" id="lastname" class="input" placeholder="Your Last Name">
+              <input type="text" name="LastName" id="lastname" class="input" placeholder="Your Last Name">
             </p>
        
        <!-- Country -->
        <p class="full">
         <label>Your Country</label>
       
-    <select id = "country" name="country" class="input" >  
+    <select id = "country" name="Country" class="input" >  
       <option> ---Your Country--- </option>  
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
@@ -360,7 +360,7 @@
           <textarea name="message" rows="5" id="message" class="input" placeholder="Why would you like to visit Mars?" required></textarea>
         </p>
         <p class="submit">
-          <input type="button" name="submit" id="submit" value="Add" onclick="AddRow()">
+          <input type="submit" name="submit" id="submit">
         </p>
     
       </form>
@@ -402,128 +402,19 @@
 
 
 
-<table border="4" id="show">
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Country</th>
-      <th>Message</th>
-    </tr>
-  </thead>
-</table>
+<script type="text/javascript">
 
 
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzIg62wze53YIUNHBKJl2EfRGQU-3EsKGiqUCzAXmWtdOX0t6QrBVXERxO5sX6J1Asp/exec'
+        const form = document.forms['google-sheet']
 
-
-
-
-<script>
-		
-  var list1 = [];
-  var list2 = [];
-  var list3 = [];
-  var list4 = [];
-  var list5 = [];
-  var list6 = [];
-
-  
-
-  var n = 1;
-  var x = 0;
-
-  function AddRow(){
-
-    var addRown = document.getElementById('show');
-    var NewRow = addRown.insertRow(n);
-
-    list1[x] = document.getElementById("firstname").value;
-    list2[x] = document.getElementById("lastname").value;
-    list3[x] = document.getElementById("email").value;
-    list4[x] = document.getElementById("phone").value;
-    list5[x] = document.getElementById("country").value;
-    list6[x] = document.getElementById("message").value;
-
-    var cell1 = NewRow.insertCell(0);
-    var cell2 = NewRow.insertCell(1);
-    var cell3 = NewRow.insertCell(2);
-    var cell4 = NewRow.insertCell(3);
-    var cell5 = NewRow.insertCell(4);
-    var cell6 = NewRow.insertCell(5);
-    
-    
-    cell1.innerHTML = list1[x];
-    cell2.innerHTML = list2[x];
-    cell3.innerHTML = list3[x];
-    cell4.innerHTML = list4[x];
-    cell5.innerHTML = list5[x];
-    cell6.innerHTML = list6[x];
-
-    n++;
-    x++;
-  }
-
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("You have successfully signed up to Mission To Mars."))
+            .catch(error => console.error('Error!', error.message))
+        })
 </script>
-
-
-
-<!-- SCRIPT FOR ADMIN-DATA STARTS -->
-
-
-
-
-
-
-<!-- <script type="text/javascript">
-  
-
-
-  var firebaseConfig = {
-    apiKey: "AIzaSyA9Mv2BH5jcqXbN7RJb-_REZSr4RRgTBaE",
-    authDomain: "display-data-nasa.firebaseapp.com",
-    databaseURL: "https://display-data-nasa-default-rtdb.firebaseio.com",
-    projectId: "display-data-nasa",
-    storageBucket: "display-data-nasa.appspot.com",
-    messagingSenderId: "697196023674",
-    appId: "1:697196023674:web:3130e63f8fec3728da90c3",
-    measurementId: "G-M4KQVLZND7"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
- 
- var database = firebase.database();
- var ref = database.ref('forms');
-
-var submit = document.getElementById("submit");   
-submit.onclick = function (e) {
-    
- 
-    var data = {
-        firstname: document.getElementById("firstname").value,
-        lastname: document.getElementById("lastname").value,
-        country: document.getElementById("country").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        message: document.getElementById("message").value,
-    };
- 
-    console.log(data);
-    console.log(database);
-
-    ref.push(data);
-
-    alert("You have successfully signed up for MISSION TO MARS");
-    e.preventDefault()
-    
-
-    window.location.href = "homepage.html";
-    
-};
-
-</script> -->
 
 
 

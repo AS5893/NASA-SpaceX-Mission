@@ -37,9 +37,5 @@ window.onload = () => {
     })
 
 
-    submitbtn.onclick = function () {
-        alert("You have successfully signed up to Mission To Mars!");
-        window.location.href = "homepage.html"
-
-    }
+    
 }    

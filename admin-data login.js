@@ -30,7 +30,7 @@ object.onclick = function() {
         for (var i = 0; i < objPeople.length; i++){
             if(enteredUsername == objPeople[i].username && enteredPassword == objPeople[i].password){
                 alert("You Have Successfully Signed In")
-              window.location.href = "display-admin-data.html";
+              window.location.href = "https://docs.google.com/spreadsheets/d/11VYgRTkzNG09Kdgul8grVx9pqL_Xi6iZU0uVbTdko3o/edit?usp=sharing";
               break;
             }
  
