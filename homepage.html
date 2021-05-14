@@ -413,6 +413,8 @@
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => alert("You have successfully signed up to Mission To Mars."))
             .catch(error => console.error('Error!', error.message))
+
+            window.location.reload()
         })
 </script>
 
