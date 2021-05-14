@@ -215,3 +215,29 @@ input[type=text], select, textarea{
     border-radius: 4px;
     text-decoration: none;
   }
+
+  table, th, td{
+      border: 2px solid black;
+      padding: 5px;
+  }
+
+  th {
+      font-size: 30px;
+      font-weight: 700;
+      font-family: 'Lexend Deca', sans-serif;
+      color: #ffffff;
+  }
+
+  td {
+      font-size: 25px;
+      color: crimson;
+      font-weight: 400;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+
+
+
+
+
+  

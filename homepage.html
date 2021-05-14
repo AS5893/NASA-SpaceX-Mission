@@ -360,7 +360,7 @@
           <textarea name="message" rows="5" id="message" class="input" placeholder="Why would you like to visit Mars?" required></textarea>
         </p>
         <p class="submit">
-          <input type="submit" name="submit" id="submit">
+          <input type="button" name="submit" id="submit" value="Add" onclick="AddRow()">
         </p>
     
       </form>
@@ -402,13 +402,81 @@
 
 
 
+<table border="4" id="show">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Country</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+</table>
+
+
+
+
+
+
+<script>
+		
+  var list1 = [];
+  var list2 = [];
+  var list3 = [];
+  var list4 = [];
+  var list5 = [];
+  var list6 = [];
+
+  
+
+  var n = 1;
+  var x = 0;
+
+  function AddRow(){
+
+    var addRown = document.getElementById('show');
+    var NewRow = addRown.insertRow(n);
+
+    list1[x] = document.getElementById("firstname").value;
+    list2[x] = document.getElementById("lastname").value;
+    list3[x] = document.getElementById("email").value;
+    list4[x] = document.getElementById("phone").value;
+    list5[x] = document.getElementById("country").value;
+    list6[x] = document.getElementById("message").value;
+
+    var cell1 = NewRow.insertCell(0);
+    var cell2 = NewRow.insertCell(1);
+    var cell3 = NewRow.insertCell(2);
+    var cell4 = NewRow.insertCell(3);
+    var cell5 = NewRow.insertCell(4);
+    var cell6 = NewRow.insertCell(5);
+    
+    
+    cell1.innerHTML = list1[x];
+    cell2.innerHTML = list2[x];
+    cell3.innerHTML = list3[x];
+    cell4.innerHTML = list4[x];
+    cell5.innerHTML = list5[x];
+    cell6.innerHTML = list6[x];
+
+    n++;
+    x++;
+  }
+
+</script>
+
+
 
 <!-- SCRIPT FOR ADMIN-DATA STARTS -->
 
 
 
 
-<script type="text/javascript">
+
+
+<!-- <script type="text/javascript">
   
 
 
@@ -455,7 +523,7 @@ submit.onclick = function (e) {
     
 };
 
-</script>
+</script> -->
 
 
 

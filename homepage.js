@@ -1,13 +1,14 @@
 window.onload = () => {
+    
     const homeButton = document.getElementById("Home")
     const homepage = document.getElementById("homepage")
     const addArea = document.getElementById("addArea")
     const nasaForm = document.getElementById("NASA-Form")
     const missionToMars = document.getElementById("Mission-To-Mars")
-    const adminButton = document.getElementById("Admin-button")
     const MMS = document.getElementById("MMS")
     const nasaSpacex = document.getElementById("nasa-spacex")
-    
+    const submitbtn = document.getElementById("submit")
+ 
 
 
     missionToMars.addEventListener('click', () => {
@@ -35,13 +36,10 @@ window.onload = () => {
 
     })
 
-   
 
-    
+    submitbtn.onclick = function () {
+        alert("You have successfully signed up to Mission To Mars!");
+        window.location.href = "homepage.html"
 
- 
-
-    
-
-
+    }
 }    

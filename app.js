@@ -1,5 +1,4 @@
  
- 
 // -------------THIS INITIALISES YOUR DATABASE ---------------// 
  
  
@@ -17,6 +16,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
  
  
+ 
 var database = firebase.database();
 var ref = database.ref('users');
  
@@ -30,34 +30,29 @@ object.onclick = function() {
  
         var enteredUsername = document.getElementById("enteredUsername").value;
         var enteredPassword = document.getElementById("enteredPassword").value;
- 
- 
+        console.log(enteredUsername, enteredPassword);
+        var signedin = false;
         for (var i = 0; i < keys.length; i++){
             var k = keys[i];
             var username = values[k].username;
             var password = values[k].password;
- 
+            console.log(username, password)
  
             if (enteredUsername == username && enteredPassword == password){
               alert("You Have Successfully Signed In")
               window.location.href = "homepage.html";
+              signedin = true
               break
             
             }
- 
- 
-            else{
-                alert("Please Check Your UserName and Password or SIGN-UP")
-                break
-                 //you dont want to go to the next window if it wrong password
- 
-            }
- 
- 
- 
- 
+
         }   
  
+
+        if(signedin == false){
+            alert("Please Check Your UserName and Password or SIGN-UP")
+            
+        }
     }
  
     function errData(data){
@@ -68,9 +63,8 @@ object.onclick = function() {
     ref.on('value', receivedData, errData) 
  
 }
-
-
 var object = document.getElementById("sign-btn");   
+console.log(object.textContent);
 object.onclick = function () {
     
  
@@ -82,11 +76,8 @@ object.onclick = function () {
         email_id: document.getElementById("Email-Id").value,
     };
  
-     
+   
     ref.push(data);
-
-    alert("You have successfully signed up")
-    window.location.reload()
     
     
  
