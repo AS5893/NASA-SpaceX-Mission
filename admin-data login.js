@@ -30,7 +30,7 @@ var firebaseConfig = {
           for (var i = 0; i < objPeople.length; i++){
               if(enteredUsername == objPeople[i].username && enteredPassword == objPeople[i].password){
                   alert("You Have Successfully Signed In")
-                window.open('https://docs.google.com/spreadsheets/d/1eLhdKzvonKnGh4m-ti52JPuP9m9SUxzRpVpduARgtgQ/edit?usp=sharing', '_blank');
+                window.open('display-data.html', '_blank');
                 window.location.href = "homepage.html"
                 break;
               }

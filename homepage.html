@@ -6,12 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mission-Mars</title>
   <link rel="stylesheet" href="homepage.css">
-  <script src="homepage.js"></script>
   
-  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.4.2/firebase-database.min.js" integrity="sha512-Z4bnhc3HEYmYDjcIV5j4j7gc7dg7tPjxk0n2JW8ZEwc0QZgnl1oAywOCAtgEJm7pKrbFywF2dUWy+AwgUkDjMw==" crossorigin="anonymous"></script>
+ 
+  
 
 
 
@@ -67,7 +64,7 @@
  
 <!-- //NASA REGISTRATION FORM START// -->
  <div id="addArea" class="addArea">
-  <form method="post" autocomplete="off" name="google-sheet" action="#" id="NASA-Form">
+  <form autocomplete="off" name="google-sheet" action="#" id="NASA-Form">
     
       
          <h1 class="reg-form" >Registration Form</h1><br>
@@ -360,7 +357,7 @@
           <textarea name="Message" rows="5" id="message" class="input" placeholder="Why would you like to visit Mars?" required></textarea>
         </p>
         <p class="submit">
-          <input type="submit" name="submit" id="submit">
+          <button type="submit" name="submit" id="submit">SUBMIT</button>
         </p>
     
       </form>
@@ -405,21 +402,7 @@
 <script type="text/javascript">
 
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzBeQ0Nq93hI_gAMVRkDOncaSIQ4P1GAumaKFdBEyuSgqi0IlmD0TnAmW6VUEh0lnxukA/exec'
-          const form = document.forms['google-sheet']
-            var responseVal = false; 
-
     
-          form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-              .then(response => alert("You have successfully submitted."))
-              .catch(error => console.error('Error!', error.message))
-
-                
-              
-              
-          })
 
           
 </script>
@@ -427,6 +410,14 @@
 
 
 
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.0/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.4.2/firebase-database.min.js" integrity="sha512-Z4bnhc3HEYmYDjcIV5j4j7gc7dg7tPjxk0n2JW8ZEwc0QZgnl1oAywOCAtgEJm7pKrbFywF2dUWy+AwgUkDjMw==" crossorigin="anonymous"></script>
+<script src="display.js"></script>
+<script src="homepage.js"></script>
   
 </body>
 </html>
