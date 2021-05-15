@@ -30,12 +30,14 @@ var firebaseConfig = {
           for (var i = 0; i < objPeople.length; i++){
               if(enteredUsername == objPeople[i].username && enteredPassword == objPeople[i].password){
                   alert("You Have Successfully Signed In")
-                window.location.href = "https://docs.google.com/spreadsheets/d/1eLhdKzvonKnGh4m-ti52JPuP9m9SUxzRpVpduARgtgQ/edit?usp=sharing";
+                window.open('https://docs.google.com/spreadsheets/d/1eLhdKzvonKnGh4m-ti52JPuP9m9SUxzRpVpduARgtgQ/edit?usp=sharing', '_blank');
+                window.location.href = "homepage.html"
                 break;
               }
    
               else{
                   alert("Incorrect Username or Password")
+                  window.location.reload();
                   break;
               }
    
@@ -46,6 +48,7 @@ var firebaseConfig = {
           console.log(data)
       }
       
+     
    
       ref.on('value', receivedData, errData)
   
