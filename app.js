@@ -1,4 +1,3 @@
- 
 // -------------THIS INITIALISES YOUR DATABASE ---------------// 
  
  
@@ -30,13 +29,13 @@ object.onclick = function() {
  
         var enteredUsername = document.getElementById("enteredUsername").value;
         var enteredPassword = document.getElementById("enteredPassword").value;
-        console.log(enteredUsername, enteredPassword);
+        
         var signedin = false;
         for (var i = 0; i < keys.length; i++){
             var k = keys[i];
             var username = values[k].username;
             var password = values[k].password;
-            console.log(username, password)
+            
  
             if (enteredUsername == username && enteredPassword == password){
               alert("You Have Successfully Signed In")
@@ -57,7 +56,7 @@ object.onclick = function() {
     }
  
     function errData(data){
-        console.log(data)
+        
     }
     
  
@@ -65,7 +64,7 @@ object.onclick = function() {
  
 }
 var object = document.getElementById("sign-btn");   
-console.log(object.textContent);
+
 object.onclick = function () {
     
  

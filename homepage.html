@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mission-To-Mars</title>
+  <title>Mission-Mars</title>
   <link rel="stylesheet" href="homepage.css">
   <script src="homepage.js"></script>
   
@@ -405,18 +405,23 @@
 <script type="text/javascript">
 
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzIg62wze53YIUNHBKJl2EfRGQU-3EsKGiqUCzAXmWtdOX0t6QrBVXERxO5sX6J1Asp/exec'
-        const form = document.forms['google-sheet']
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzBeQ0Nq93hI_gAMVRkDOncaSIQ4P1GAumaKFdBEyuSgqi0IlmD0TnAmW6VUEh0lnxukA/exec'
+          const form = document.forms['google-sheet']
+            var responseVal = false; 
 
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => alert("You have successfully signed up to Mission To Mars."))
-            .catch(error => console.error('Error!', error.message))
+    
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("You have successfully submitted."))
+              .catch(error => console.error('Error!', error.message))
 
-        })
+                
+              
+              
+          })
 
-        window.location.reload()
+          
 </script>
 
 
@@ -425,4 +430,3 @@
   
 </body>
 </html>
-
