@@ -8,6 +8,7 @@ window.onload = () => {
     const MMS = document.getElementById("MMS")
     const nasaSpacex = document.getElementById("nasa-spacex")
     const submitbtn = document.getElementById("submit")
+    const logout = document.getElementById("logout")
  
 
 
@@ -34,6 +35,10 @@ window.onload = () => {
         nasaSpacex.style.float = "center"
 
 
+    })
+
+    logout.addEventListener('click', () => {
+            alert("You have successfully logged out.")
     })
 
 
